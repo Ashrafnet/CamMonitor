@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AAC72031-BCC3-4429-B112-C19148219903}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CamMonitor</RootNamespace>
+    <AssemblyName>CamMonitor</AssemblyName>
+    <ApplicationIcon>Appcamera.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>110C615ABB970FD8589E07844C91E40F80A42F81</ManifestCertificateThumbprint>
+    <ManifestKeyFile>CamMonitor_1_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>\\fileserver\cammonitor%24\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://www.ucas.edu.ps</SupportUrl>
+    <ProductName>Camera Monitor</ProductName>
+    <PublisherName>Ucase</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <DisallowUrlActivation>true</DisallowUrlActivation>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Absolute</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl>\\fileserver\DotNetFX</BootstrapperComponentsUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Imaging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=38eb47741dd0492e, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Camera.cs" />
+    <Compile Include="CameraWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clsAviWriter.cs" />
+    <Compile Include="clsdb.cs" />
+    <Compile Include="clsEncrypt.cs" />
+    <Compile Include="clsFunctions.cs" />
+    <Compile Include="clsINI.cs" />
+    <Compile Include="clsItems.cs" />
+    <Compile Include="clsMail.cs" />
+    <Compile Include="clsSettings.cs" />
+    <Compile Include="clsWin32.cs" />
+    <Compile Include="ContanerItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContanerItem.Designer.cs">
+      <DependentUpon>ContanerItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrCamView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrCamView.Designer.cs">
+      <DependentUpon>ctrCamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrExptionProxyPassing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrExptionProxyPassing.Designer.cs">
+      <DependentUpon>ctrExptionProxyPassing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrMailConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrMailConfig.Designer.cs">
+      <DependentUpon>ctrMailConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrVideoCompression.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrVideoCompression.Designer.cs">
+      <DependentUpon>ctrVideoCompression.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dshow\Core\IBaseFilter.cs" />
+    <Compile Include="dshow\Core\IBasicVideo.cs" />
+    <Compile Include="dshow\Core\ICreateDevEnum.cs" />
+    <Compile Include="dshow\Core\IEnumPins.cs" />
+    <Compile Include="dshow\Core\IFileSourceFilter.cs" />
+    <Compile Include="dshow\Core\IFilterGraph.cs" />
+    <Compile Include="dshow\Core\IGraphBuilder.cs" />
+    <Compile Include="dshow\Core\IMediaControl.cs" />
+    <Compile Include="dshow\Core\IMediaEvent.cs" />
+    <Compile Include="dshow\Core\IMediaPosition.cs" />
+    <Compile Include="dshow\Core\IMediaSeeking.cs" />
+    <Compile Include="dshow\Core\IPin.cs" />
+    <Compile Include="dshow\Core\IPropertyBag.cs" />
+    <Compile Include="dshow\Core\ISampleGrabber.cs" />
+    <Compile Include="dshow\Core\IVideoFrameStep.cs" />
+    <Compile Include="dshow\Core\IVideoWindow.cs" />
+    <Compile Include="dshow\Core\Structures.cs" />
+    <Compile Include="dshow\Core\Uuids.cs" />
+    <Compile Include="dshow\Core\Win32.cs" />
+    <Compile Include="dshow\Filter.cs" />
+    <Compile Include="dshow\FilterCollection.cs" />
+    <Compile Include="dshow\Tools.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCameraNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCameraNew.Designer.cs">
+      <DependentUpon>frmCameraNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCamSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCamSettings.Designer.cs">
+      <DependentUpon>frmCamSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOptions.Designer.cs">
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPicExist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPicExist.designer.cs">
+      <DependentUpon>frmPicExist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSave.designer.cs">
+      <DependentUpon>frmSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMotionDetector.cs" />
+    <Compile Include="LayOutContaner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LayOutContaner.designer.cs">
+      <DependentUpon>LayOutContaner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mdiMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdiMain.Designer.cs">
+      <DependentUpon>mdiMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDetector3Optimized.cs" />
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="CameraWindow.resx">
+      <DependentUpon>CameraWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContanerItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ContanerItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrCamView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ctrCamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrExptionProxyPassing.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ctrExptionProxyPassing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrMailConfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ctrMailConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrVideoCompression.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ctrVideoCompression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCameraNew.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCameraNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCamSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCamSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOptions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPicExist.resx">
+      <DependentUpon>frmPicExist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSave.resx">
+      <DependentUpon>frmSave.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayOutContaner.resx">
+      <DependentUpon>LayOutContaner.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mdiMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>mdiMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="CamMonitor_1_TemporaryKey.pfx" />
+    <None Include="CamMonitor_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="vfw\AssemblyInfo.cs" />
+    <Compile Include="vfw\AVIReader.cs" />
+    <Compile Include="vfw\AVIWriter.cs" />
+    <Compile Include="vfw\Win32.cs" />
+    <Compile Include="VideoSource\ByteArrayUtils.cs" />
+    <Compile Include="VideoSource\CameraEvents.cs" />
+    <Compile Include="VideoSource\CaptureDevice.cs" />
+    <Compile Include="VideoSource\IVideoSource.cs" />
+    <Compile Include="VideoSource\JPEGStream.cs" />
+    <Compile Include="VideoSource\MJPEGStream.cs" />
+    <Compile Include="VideoSource\VideoFileSource.cs" />
+    <Compile Include="VideoSource\VideoStream.cs" />
+    <Compile Include="Web References\DBService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\close.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\record.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Start.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Stop.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\settings.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\cam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Appcamera.ico" />
+    <Content Include="dshow\bin\Debug\dshow.dll" />
+    <Content Include="dshow\bin\Debug\dshow.pdb" />
+    <Content Include="dshow\bin\Release\dshow.dll" />
+    <Content Include="dshow\Core\1.txt" />
+    <Content Include="dshow\dshow.csproj" />
+    <Content Include="dshow\obj\Debug\dshow.dll" />
+    <Content Include="dshow\obj\Debug\dshow.pdb" />
+    <Content Include="dshow\obj\dshow.csproj.FileList.txt" />
+    <Content Include="dshow\obj\Release\dshow.dll" />
+    <Content Include="dshow\obj\Release\Refactor\dshow.dll" />
+    <None Include="app.config" />
+    <None Include="conf.ini" />
+    <None Include="Properties\app.manifest" />
+    <None Include="res\folder.gif" />
+    <None Include="res\prop.gif" />
+    <None Include="res\certifacet.gif" />
+    <None Include="res\fullscreen.png" />
+    <None Include="res\window.png" />
+    <None Include="res\mail.png" />
+    <None Include="res\mailserver.png" />
+    <None Include="res\NewCam.png" />
+    <None Include="Web References\DBService\dbMethods.wsdl" />
+    <None Include="res\corn.PNG" />
+    <None Include="res\picfolder.png" />
+    <None Include="res\vfolder.png" />
+    <None Include="res\refresh.gif" />
+    <None Include="res\del.gif" />
+    <None Include="res\rename.png" />
+    <None Include="res\exitFullScreenHS.png" />
+    <None Include="res\FullScreenHS.png" />
+    <Content Include="vfw\bin\Debug\Tiger.Video.VFW.dll" />
+    <Content Include="vfw\bin\Debug\Tiger.Video.VFW.pdb" />
+    <Content Include="vfw\bin\Release\Tiger.Video.VFW.dll" />
+    <Content Include="vfw\obj\Debug\Tiger.Video.VFW.dll" />
+    <Content Include="vfw\obj\Debug\Tiger.Video.VFW.pdb" />
+    <Content Include="vfw\obj\Release\Refactor\Tiger.Video.VFW.dll" />
+    <Content Include="vfw\obj\Release\Tiger.Video.VFW.dll" />
+    <Content Include="vfw\obj\vfw.csproj.FileList.txt" />
+    <Content Include="vfw\vfw.csproj" />
+    <None Include="Web References\DBService\dbMethods.disco" />
+    <None Include="Web References\DBService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.ccast.edu.ps/dbservice/dbMethods.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DBService\</RelPath>
+      <UpdateFromURL>http://www.ccast.edu.ps/dbservice/dbMethods.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CamMonitor_DBService_dbMethods</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dshow\obj\Debug\TempPE\" />
+    <Folder Include="dshow\obj\Release\TempPE\" />
+    <Folder Include="vfw\obj\Debug\TempPE\" />
+    <Folder Include="vfw\obj\Release\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
