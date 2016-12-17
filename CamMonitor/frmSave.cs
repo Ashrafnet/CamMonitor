@@ -32,7 +32,7 @@ namespace CamStudent
                 P2 += textBox1.Text + ".jpg";
                 if (System.IO.File.Exists(P1) || System.IO.File.Exists(P2))
                 {
-                    frmPicExist pic = new frmPicExist(P1,P2, textBox1.Text);
+                    frmPicExist pic = new frmPicExist(P1,P2, textBox1.Text); 
                     DialogResult dr= pic.ShowDialog();
                     if (dr == DialogResult.OK)
                     {
